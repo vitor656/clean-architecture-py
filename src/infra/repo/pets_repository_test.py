@@ -60,8 +60,6 @@ def test_select_pet():
     query_pets2 = pets_repository.select_pet(user_id=user_id)
     query_pets3 = pets_repository.select_pet(pet_id=pet_id, user_id=user_id)
 
-    print(query_pets1)
-
     assert data in query_pets1
     assert data in query_pets2
     assert data in query_pets3
