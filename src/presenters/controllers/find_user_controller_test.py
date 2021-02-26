@@ -14,7 +14,7 @@ def test_handle():
     find_user_controller = FindUserController(find_user_use_case)
     http_request = HttpRequest(query={"user_id": faker.random_number()})
 
-    response = find_user_controller.handle(http_request)
+    response = find_user_controller.route(http_request)
 
     # Testing Inputs
     assert find_user_use_case.by_id_param["user_id"] == http_request.query["user_id"]
@@ -31,7 +31,7 @@ def test_handle_no_query_param():
     find_user_controller = FindUserController(find_user_use_case)
     http_request = HttpRequest()
 
-    response = find_user_controller.handle(http_request)
+    response = find_user_controller.route(http_request)
 
     # Testing Inputs
     assert find_user_use_case.by_id_param == {}

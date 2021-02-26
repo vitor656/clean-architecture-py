@@ -1,10 +1,11 @@
 from src.domain.use_cases import RegisterUser
+from src.main.interface import RouteInterface
 from typing import Type
 from src.presenters.helpers import HttpRequest, HttpResponse
 from src.presenters.errors import HttpErrors
 
 
-class RegisterUserConstroller:
+class RegisterUserConstroller(RouteInterface):
     """ Class related as controller for user registering """
 
     def __init__(self, register_user_use_case: Type[RegisterUser]):

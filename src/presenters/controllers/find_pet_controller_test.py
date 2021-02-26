@@ -14,7 +14,7 @@ def test_handle():
     find_pet_controller = FindPetController(find_pet_use_case)
     http_request = HttpRequest(query={"pet_id": faker.random_number()})
 
-    response = find_pet_controller.handle(http_request)
+    response = find_pet_controller.route(http_request)
 
     # Testing Inputs
     assert find_pet_use_case.by_pet_id_param["pet_id"] == http_request.query["pet_id"]
